@@ -4,6 +4,7 @@ green="\033[0;32m"
 orange="\033[0;33m"
 red="\033[0;31m"
 count=1
+
 while getopts u: flag
 do
     case "${flag}" in
@@ -11,19 +12,24 @@ do
     esac
 done
 
+if [ -z "$url" ]; then
+    echo -e "${red}Error: You must provide a target domain using the '-u' parameter."
+    exit 1
+fi
+
 echo "The program starts for $url domain to get subdomains in a second."
 sleep 1
 echo "Program started..."
 
 while true;
 do
-    urlC="$url-$count"
+    urlC="$url$count"
     ((count++))
         if [ ! -d "./$urlC" ]; then
             mkdir "./$urlC" 
             break       
         else 
-            urlC="$url-$count"      
+            urlC="$url$count"      
             
         fi
 done
