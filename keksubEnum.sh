@@ -74,10 +74,11 @@ combineLists () {
 }
 
 
-theHarvesterFunction
-assetfinderFunction
-subFinderFunction
-amassFunction
-waybackUnfurlFunction
-sublisterFunction
+theHarvesterFunction &
+assetfinderFunction &
+subFinderFunction &
+amassFunction &
+waybackUnfurlFunction &
+sublisterFunction &
+wait
 combineLists
